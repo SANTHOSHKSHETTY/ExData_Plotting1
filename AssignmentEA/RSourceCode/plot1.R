@@ -5,11 +5,11 @@ d<-read.csv("household_power_consumption.txt", header=TRUE,sep=";", colClasses=c
 ## plot hist as per requirement
 ## close grapic device
 
+
 f<-d[d$Date=='1/2/2007'|d$Date=='2/2/2007',]
 
-png(file="plot2.png")
+png(file="plot1.png")
 
- plot(strptime(paste(f$Date,f$Time),"%d/%m/%Y %H:%M:%S"),f[,3],type="l",ylab="Global Active Power (killwatts)", xlab="")
-
+hist(f$Global_active_power,col="red",main=paste("Global Active Power"),xlab="Global Active Power (kilowatts)")
 
 dev.off()
